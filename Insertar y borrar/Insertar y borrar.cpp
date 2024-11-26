@@ -18,7 +18,7 @@ public:
         tamano++;
     };
 
-    string* ampliar(string *matriz, int tamano)
+    string* ampliar(string *matriz, int tamano) //amplía nuestra matriz
     {
         string *nueva = new string[tamano+1];
 
@@ -40,7 +40,7 @@ public:
 
 };
 
-void dividir(string* base, Arr *matrizX, int inicio, int fin)
+void dividir(string* base, Arr *matrizX, int inicio, int fin) //bucle para asignar
 {
     
     for (int i = inicio; i < fin; i++)
@@ -66,16 +66,27 @@ int main()
     int fin2 = 10;
     int inicio2 = fin1;
 
-    cout << fin1 << endl;
+    cout << fin1 << endl; //muestra la división
     cout << fin2 << endl;
 
 
-    dividir(Base, &matriz1, inicio1, fin1);
+    dividir(Base, &matriz1, inicio1, fin1); //llama la funcion para asignar
     dividir(Base, &matriz2, inicio2, fin2);
     
-    matriz1.imprimir();
+    matriz1.imprimir(); //imprime
     cout << endl;
     cout << endl;
     matriz2.imprimir();
-
 };
+
+/*
+========================================================================================================================
+  MMP""MM""YMM `7MM"""Mq.  `YMM'   `MM'    `7MMF'  `7MMF'      db      `7MM"""Mq.  `7MM"""Yb.   `7MM"""YMM  `7MM"""Mq.
+  P'   MM   `7   MM   `MM.   VMA   ,V        MM      MM       ;MM:       MM   `MM.   MM    `Yb.   MM    `7    MM   `MM.
+       MM        MM   ,M9     VMA ,V         MM      MM      ,V^MM.      MM   ,M9    MM     `Mb   MM   d      MM   ,M9
+       MM        MMmmdM9       VMMP          MMmmmmmmMM     ,M  `MM      MMmmdM9     MM      MM   MMmmMM      MMmmdM9
+       MM        MM  YM.        MM           MM      MM     AbmmmqMA     MM  YM.     MM     ,MP   MM   Y  ,   MM  YM.
+       MM        MM   `Mb.      MM           MM      MM    A'     VML    MM   `Mb.   MM    ,dP'   MM     ,M   MM   `Mb.
+     .JMML.    .JMML. .JMM.   .JMML.       .JMML.  .JMML..AMA.   .AMMA..JMML. .JMM..JMMmmmdP'   .JMMmmmmMMM .JMML. .JMM.
+==========================================================================================================================
+*/
