@@ -25,6 +25,7 @@ public:
         {
             nueva[i] = matriz[i];
         };
+        delete[] matriz;
         return nueva;
     };
 
@@ -50,7 +51,6 @@ void dividir(string* base, Arr *matrizX, int inicio, int fin) //bucle para asign
     {
         matrizX->agregar(base[i]);
     };
-
 };
 
 int main()
@@ -69,9 +69,6 @@ int main()
     int fin2 = 10;
     int inicio2 = fin1;
 
-    cout << fin1 << endl; //muestra la división
-    cout << fin2 << endl;
-
     dividir(Base, &matriz1, inicio1, fin1); //llama la funcion para asignar
     dividir(Base, &matriz2, inicio2, fin2);
     
@@ -79,11 +76,6 @@ int main()
     cout << endl;
     cout << endl;
     matriz2.imprimir();
-
-    delete Base;
-    matriz1.~Arr();
-    matriz2.~Arr();
-
 };
 
 /*
