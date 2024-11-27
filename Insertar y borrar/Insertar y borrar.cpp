@@ -5,7 +5,6 @@ class Arr
 {
 private:
     int tamano = 0;
-    int capacidad;
     string* matriz = new string [tamano];
 
 public:
@@ -38,6 +37,10 @@ public:
         };
     };
 
+    ~Arr()
+    {
+        delete[] matriz;
+    };
 };
 
 void dividir(string* base, Arr *matrizX, int inicio, int fin) //bucle para asignar
@@ -69,7 +72,6 @@ int main()
     cout << fin1 << endl; //muestra la división
     cout << fin2 << endl;
 
-
     dividir(Base, &matriz1, inicio1, fin1); //llama la funcion para asignar
     dividir(Base, &matriz2, inicio2, fin2);
     
@@ -77,6 +79,11 @@ int main()
     cout << endl;
     cout << endl;
     matriz2.imprimir();
+
+    delete Base;
+    matriz1.~Arr();
+    matriz2.~Arr();
+
 };
 
 /*
