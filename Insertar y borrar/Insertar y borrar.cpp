@@ -5,7 +5,7 @@ class Arr
 {
 private:
     int tamano = 0;
-    string* matriz = new string [tamano];
+    string* matriz = new string [0];
 
 public:
     Arr() {};
@@ -36,6 +36,29 @@ public:
         {
             cout << matriz[i] << " | ";
         };
+    };
+
+    void borrar(int index)
+    {
+        matriz = reducir(matriz, index);
+        tamano--;
+    };
+    
+    string* reducir(string* matriz, int index)
+    {
+        string* nueva = new string[tamano - 1];
+        for (int i = 0; i < tamano - 1; i++)
+        {
+            if (i >= index)
+            {
+                nueva[i] = matriz[i + 1];
+            }
+            else
+            {
+                nueva[i] = matriz[i];
+            };
+        };
+        return nueva;
     };
 
     ~Arr()
@@ -76,6 +99,14 @@ int main()
     cout << endl;
     cout << endl;
     matriz2.imprimir();
+
+    int index;
+    cout << endl << "inserta numero para borrar: ";
+    cin >> index;
+
+    matriz1.borrar(index);
+    cout << endl;
+    matriz1.imprimir();
 };
 
 /*
